@@ -1,15 +1,24 @@
 // Define the bank accounts
 let accounts = {
-  1234567890: {
+  1111122222: {
     balance: 10000,
-    pin: 1234,
+    pin: 1234
   },
-  9876543210: {
+  2222211111: {
     balance: 500,
-    pin: 5678,
-  },
+    pin: 4321
+  }
 };
-
+let Language = prompt(
+  "Select your prepared language by pressing:\n1. English\n2. Spanish"
+);
+if (Language === "1") {
+  transferMoney();
+} else if (Language === "2") {
+  alert("Temporarily service unavailable");
+} else {
+  alert("Invalid Selection");
+}
 // Define the transfer function
 function transferMoney() {
   // Prompt for the account number to transfer from
@@ -33,7 +42,7 @@ function transferMoney() {
       // Add the amount to accountTo
       accounts[accountTo].balance += amount;
       alert(
-        `Transferred $${amount} from account ${accountFrom} to account ${accountTo}`
+        `Transferred #${amount} from account ${accountFrom} to account ${accountTo}`
       );
     } else {
       alert("Invalid account or amount");
